@@ -9,20 +9,38 @@ public class BaseAnimController : MonoBehaviour
 		_runTr, _atack_0_Tr, _dieTr, _gd_Tr;
 
 	protected Animator _anim;
+    private int count = 0;
 
 	private void Awake ()
 	{
 		_anim = GetComponent <Animator> ();
-	}
+        _anim.SetTrigger(_runTr);
+       
+    }
 
 
 	private void OnGUI ()
 	{
-        //_anim.SetTrigger(_runTr);
-        BaseButtons ();
-	}
+        if (count != 650)
+        {
+            transform.Translate(Vector3.forward * 1f * Time.deltaTime);
+            count++;
+        }
+        else
+            StartCoroutine("Move");
+        //BaseButtons ();
+    }
 
-	protected virtual void BaseButtons ()
+    IEnumerator Move()
+    {
+        
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            _anim.SetTrigger(_atack_0_Tr);
+        }
+    }
+    protected virtual void BaseButtons ()
 	{
 		if (GUI.Button (new Rect (10, 10, 100, 50), "Run")) {
 			_anim.SetTrigger (_runTr);
