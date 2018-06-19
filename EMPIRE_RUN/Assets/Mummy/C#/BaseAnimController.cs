@@ -18,7 +18,8 @@ public class BaseAnimController : MonoBehaviour
 
 	private void OnGUI ()
 	{
-		BaseButtons ();
+        _anim.SetTrigger(_runTr);
+        //BaseButtons ();
 	}
 
 	protected virtual void BaseButtons ()

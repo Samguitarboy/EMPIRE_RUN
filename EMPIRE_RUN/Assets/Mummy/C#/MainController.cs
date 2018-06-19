@@ -26,7 +26,7 @@ public class MainController : MonoBehaviour
 			ScreenCapture.CaptureScreenshot (Time.frameCount + ".png");
 		}
 	}
-
+    /*
 	private void OnGUI ()
 	{
 		if (GUI.Button (new Rect (Screen.width * 0.5f - 50, 5, 50, 50), "<<")) {
@@ -49,7 +49,7 @@ public class MainController : MonoBehaviour
 			_temp = _mummies [counter];
 		}
 
-
+    
 		GUI.Label (new Rect (Screen.width * 0.5f, Screen.height - 50, 300, 50), "Stop camera rotation RMB, zoom MMB", _style);
-	}
+	}*/
 }
