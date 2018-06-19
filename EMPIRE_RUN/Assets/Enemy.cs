@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(3.5f);
-            //transform.eulerAngles += new Vector3(0, 180f, 0);
+            transform.eulerAngles += new Vector3(0, 180f, 0);
         }
     }
 }
